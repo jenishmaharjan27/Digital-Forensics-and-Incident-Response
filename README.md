@@ -58,9 +58,45 @@ By monitoring the Windows machine through Wazuh, sufficient evidence was gathere
 
 The Wazuh Agent installed on the Windows machine was configured to collect extensive system activity logs, including user actions, system changes, and application behavior. These logs were continuously forwarded to the Wazuh server for centralized monitoring and analysis.
 
+<img width="975" height="511" alt="image" src="https://github.com/user-attachments/assets/1bd04b8a-141a-4f1e-9bed-eca52a506a5d" />
+<img width="975" height="333" alt="image" src="https://github.com/user-attachments/assets/8295839c-9cd9-4649-9ca2-f619de289f0f" />
+<img width="975" height="253" alt="image" src="https://github.com/user-attachments/assets/e2492f3e-4ef7-43fb-8dc0-e529b04cdad7" />
+*Figure 2.1: Successful installation of the Wazuh server on the Ubuntu system used for centralized security monitoring.*
+<br><br>
+
+<img width="975" height="444" alt="image" src="https://github.com/user-attachments/assets/d39ea06d-b03f-4c7a-bcd2-c37b5baf71aa" />
+*Figure 2.2: Wazuh manager and associated services running successfully after installation on the Ubuntu server.*
+<br><br>
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/ff9671bb-6253-47dc-a35c-994501a4c2a6" />
+*Figure 2.3: Wazuh dashboard displaying centralized security monitoring and real-time alerts collected from the Windows victim system.*
+<br><br>
+
+<img width="975" height="510" alt="image" src="https://github.com/user-attachments/assets/17389bb3-1b4d-4441-a353-d915a14ccf11" />
+<img width="975" height="511" alt="image" src="https://github.com/user-attachments/assets/c0461345-8353-4884-8892-de2f92d58aa6" />
+<img width="975" height="514" alt="image" src="https://github.com/user-attachments/assets/a19ffd77-29ab-440e-80cb-a3d54c358448" />
+*Figure 2.3: Wazuh Windows agent deployed and activated using windows powershell for capturing endpoint activities and detecting unauthorized access during the investigation.*
+<br><br>
+
+
 ### 2.2 Suspicious Activity Identified
 
 The investigation revealed that the attacker gained access using a **reverse shell exploitation technique**. After gaining access, the attacker downloaded sensitive information and attempted to delete files to cover their tracks. Evidence of unauthorized access, data exfiltration, and file deletion was detected through Wazuh alerts and system logs.
+
+<img width="624" height="334" alt="image" src="https://github.com/user-attachments/assets/ce5a585c-723e-49b6-829a-5222db475f8c" />
+Figure 2.4: Detection of malicious activity by Wazuh through real-time security monitoring and alert correlation.*
+<br><br>
+
+<img width="975" height="522" alt="image" src="https://github.com/user-attachments/assets/653f96d3-15a1-4fc9-a538-64b6192f4706" />
+<img width="975" height="525" alt="image" src="https://github.com/user-attachments/assets/30e04776-6840-4a36-a1c9-bcb120b920f6" />
+<img width="975" height="524" alt="image" src="https://github.com/user-attachments/assets/85daa5b6-ff8e-4b01-a660-9f8d6cade65d" />
+*Figure 2.5: Wazuh log entries capturing attacker activity and system events related to the intrusion.*
+<br><br>
+
+<img width="975" height="513" alt="image" src="https://github.com/user-attachments/assets/ec9a9ea6-f413-4bde-b5c8-9b8b165c63c7" />
+<img width="975" height="515" alt="image" src="https://github.com/user-attachments/assets/fb13a386-b43c-45d4-9fce-c4204298974e" />
+*Figure 2.6: File Integrity Monitoring (FIM) logs showing unauthorized file modifications on the victim system.*
+<br><br>
 
 ### 2.3 Key Findings
 
@@ -68,7 +104,11 @@ The investigation revealed that the attacker gained access using a **reverse she
 - A suspicious executable was downloaded on the victim machine.  
 - Sensitive files were exfiltrated.  
 - Files were intentionally deleted to hide activity.  
-- System logs were cleared to conceal malicious actions.  
+- System logs were cleared to conceal malicious actions.
+
+For a detailed demonstration of the attack vector used in this investigation, including payload creation, reverse shell setup, and attacker actions, visit the following repository:
+
+**[Attack Vector Project Repository](https://github.com/jenishmaharjan27/Reverse-Shell-Exploitation)**
 
 ---
 
@@ -80,13 +120,35 @@ Specialized forensic tools such as **FTK Imager** and **Autopsy** were used to e
 
 FTK Imager was used to create a forensic disk image of the compromised system. The tool preserved evidence integrity by generating hash values for verification. This disk image served as the primary evidence source for further analysis.
 
+<img width="975" height="507" alt="image" src="https://github.com/user-attachments/assets/d7eb8d0c-ca56-4248-82a2-e91555b1b0a6" />
+<img width="975" height="505" alt="image" src="https://github.com/user-attachments/assets/6540d007-1e79-47ed-83e4-e4a6f338b226" />
+<img width="975" height="507" alt="image" src="https://github.com/user-attachments/assets/12c2f3de-10ca-48eb-9a23-46b6f1b31279" />
+<img width="975" height="526" alt="image" src="https://github.com/user-attachments/assets/449b2be2-a7dd-4a69-8d25-9ce9945a26ea" />
+*Figure 3.1: Creation of a forensic system disk image to preserve evidence integrity for further analysis.*
+<br><br>
+
 ### 3.2 Analysis Using Autopsy
 
 The disk image was imported into Autopsy for in-depth analysis. Autopsy modules were used to inspect file systems, analyze metadata, and recover deleted files. Despite attempts to hide evidence by deleting files and clearing logs, recovered artifacts indicated unauthorized activity.
 
+<img width="975" height="520" alt="image" src="https://github.com/user-attachments/assets/128673cf-2400-46c2-b4f6-8c299b1bda11" />
+*Figure 3.2: Creation of a new forensic case in Autopsy to analyze the acquired system disk image.*
+<br><br>
+
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/c39ff5b6-fd9f-4527-8a53-b257dc05023a" />
+<img width="975" height="523" alt="image" src="https://github.com/user-attachments/assets/c8004bbc-54d6-467d-8195-fc0d9d461dcd" />
+*Figure 3.3: Autopsy analysis results displaying recovered artifacts and indicators of unauthorized activity.*
+<br><br>
+
 ### 3.3 Identification of Malicious Software
 
 A suspicious executable recovered from the disk image was isolated and analyzed. The file was submitted to **VirusTotal**, where multiple antivirus engines classified it as **Trojan.Marte/Shellcode**. This confirmed the file as a malicious payload used to establish the reverse shell and gain unauthorized access.
+
+<img width="975" height="527" alt="image" src="https://github.com/user-attachments/assets/933b4379-82c4-45a5-9018-fe6ca5e028b5" />
+<img width="975" height="526" alt="image" src="https://github.com/user-attachments/assets/5b29f6fd-09d0-4e7e-b598-2985b30a5b6f" />
+*Figure 3.4: Malware analysis performed using VirusTotal to identify and classify the extracted malicious executable.*
+<br><br>
+
 
 ---
 
