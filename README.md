@@ -2,7 +2,7 @@
 
 **Final Project Report**  
 Submitted in partial fulfillment of the requirements for the  
-**Training Completion Certificate in Cybersecurity**  
+**Training Completion Certification in Cybersecurity**  
 **Mindrisers Institute of Technology**
 
 **Author:** Jenish Maharjan  
