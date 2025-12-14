@@ -83,8 +83,8 @@ The Wazuh Agent installed on the Windows machine was configured to collect exten
 
 The investigation revealed that the attacker gained access using a **reverse shell exploitation technique**. After gaining access, the attacker downloaded sensitive information and attempted to delete files to cover their tracks. Evidence of unauthorized access, data exfiltration, and file deletion was detected through Wazuh alerts and system logs.
 
-<img width="624" height="334" alt="image" src="https://github.com/user-attachments/assets/ce5a585c-723e-49b6-829a-5222db475f8c" />
-Figure 2.4: Detection of malicious activity by Wazuh through real-time security monitoring and alert correlation.*
+<img width="975" height="521" alt="image" src="https://github.com/user-attachments/assets/8e025047-70d7-403a-a606-187928a1d56e" />
+*Figure 2.4: Detection of malicious activity by Wazuh through real-time security monitoring and alert correlation.*
 <br><br>
 
 <img width="975" height="522" alt="image" src="https://github.com/user-attachments/assets/653f96d3-15a1-4fc9-a538-64b6192f4706" />
