@@ -1,9 +1,5 @@
 # Digital Forensics and Incident Response
 
-**Final Project Report**  
-Submitted in partial fulfillment of the requirements for the  
-**Training Completion Certification in Cybersecurity**  
-**Mindrisers Institute of Technology**
 
 **Author:** Jenish Maharjan  
 **Role:** Forensic Analyst  
